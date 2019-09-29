@@ -40,8 +40,8 @@ app.get('/toys' , (req, res) => {
 });
 
 app.post('/toy' , (req,res) => {
-
-    mysqlConnection.query("Insert into toys(name , featured ,rating) values ('"+req.body.name+"', '"+req.body.featured+"' , '"+req.body.rating+"')" ,(err,result) =>{
+    console.log(req.body.category);
+    mysqlConnection.query("Insert into toys(name , featured ,rating ,category) values ('"+req.body.name+"', '"+req.body.featured+"' , '"+req.body.rating+"' , '"+req.body.category+"')" ,(err,result) =>{
 
          if(!err)
          {
